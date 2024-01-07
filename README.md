@@ -16,10 +16,10 @@ Clone this repository to your local computer.
 
 ```shell
 # clone repository
-$ git clone ...
+$ git clone https://github.com/Lupin3000/Micropython-I2C-DF2301Q.git
 
 # change into local repository folder
-$ cd ...
+$ cd Micropython-I2C-DF2301Q/
 ```
 
 You can optionally install other helpful Python packages.
