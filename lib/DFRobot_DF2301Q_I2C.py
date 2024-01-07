@@ -1,6 +1,6 @@
 from micropython import const
 from machine import I2C, Pin
-from time import sleep
+from utime import sleep
 
 
 DF2301Q_I2C_ADDR = const(0x64)
