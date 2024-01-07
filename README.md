@@ -1,6 +1,6 @@
 # MicroPython I2C library and example for Gravity: Offline Language Learning Voice Recognition Sensor
 
-This repository contains the MicroPython I2C library for the Gravity: Offline Language Learning Voice Recognition Sensor from DFRobot, as well as a very simple example of how to use it.
+This repository contains the MicroPython I2C library for the Gravity: Offline Language Learning Voice Recognition Sensor from DFRobot, as well as a very simple example of how to use it. The original repository from DFRobot is located [here](https://github.com/DFRobot/DFRobot_DF2301Q).
 
 ## Prerequisite
 
