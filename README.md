@@ -2,12 +2,16 @@
 
 This repository contains the MicroPython I2C library for the Gravity: Offline Language Learning Voice Recognition Sensor from DFRobot, as well as a very simple example of how to use it. The original repository from DFRobot is located [here](https://github.com/DFRobot/DFRobot_DF2301Q) (_for Arduino and Raspberry Pi_).
 
+## Why this repository?
+
+The original version of DFRobot uses Python serial (_UART_) and Python SMBus (_I2C_), which are not compatible with MicroPython. Also, I was not so happy with the Python code style/quality. That's why I created this version.
+
 ## Prerequisite
 
 - [Gravity: Offline Language Learning Voice Recognition Sensor](https://www.dfrobot.com/product-2665.html?tracking=Mszf2HlGMStAAKkFfhNgg3QhFFchlilhR47u9vXX9o9Ko6giJYRJQdmwZjbDIvMV)
 - ESP32 (_MicroPython compatible device_)
-- MicroPython firmware installed
-- USB cable
+- MicroPython firmware installed (_min. 1.20.0.*_)
+- USB cable (_for connection between ESP32 and sensor_)
 - latest [VCP](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) driver installed
 
 ## Installation
