@@ -1,0 +1,8 @@
+.venv
+.idea
+
+*.log
+*.pyc
+*.so
+*.manifest
+*.spec
