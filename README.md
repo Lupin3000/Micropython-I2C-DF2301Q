@@ -28,6 +28,11 @@ You can optionally install other helpful Python packages.
 - rshell (_to establish a serial connection between the local computer and the ESP32 and to transfer data _)
 - micropython-esp32-stubs (_to facilitate local development, for example: code completion_)
 
+```shell
+# install python packages (optional)
+$ pip install -r requirements.txt
+```
+
 Connect the sensor to the ESP32. Make sure that you have set the communication mode on the sensor to `I2C` and use the correct connections (_ESP GPIO's/Sensor interface_)! Only then connect the ESP32 to your local computer via USB.
 
 > In the example `main.py`, the GPIOs pins 21 (_SDA_) and 22 (_SCL_) are used. However, you can adapt these to your needs at any time.
