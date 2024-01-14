@@ -10,8 +10,6 @@ DF2301Q_I2C_REG_SET_MUTE = const(0x04)
 DF2301Q_I2C_REG_SET_VOLUME = const(0x05)
 DF2301Q_I2C_REG_WAKE_TIME = const(0x06)
 DF2301Q_I2C_8BIT_RANGE = const(0xFF)
-DF2301Q_I2C_MSG_TAIL = const(0x5A)
-DF2301Q_I2C_GET_CMDID_DURATION = const(0.05)
 DF2301Q_I2C_PLAY_CMDID_DURATION = const(1)
 
 
@@ -29,7 +27,11 @@ class DFRobot_DF2301Q_I2C:
         :param i2c_bus: I2C bus number
         """
         self._addr = i2c_addr
-        self._i2c = I2C(i2c_bus, sda=Pin(sda), scl=Pin(scl))
+
+        try:
+            self._i2c = I2C(i2c_bus, sda=Pin(sda), scl=Pin(scl))
+        except Exception as err:
+            print(f'Could not initialize i2c! bus: {i2c_bus}, sda: {sda}, scl: {scl}, error: {err}')
 
     def _write_reg(self, reg, data) -> None:
         """
@@ -47,17 +49,20 @@ class DFRobot_DF2301Q_I2C:
         """
         Reads data from the I2C register
         :param reg: address of device
-        :return: bytes
+        :return: bytes or 0
         """
         data = self._i2c.readfrom_mem(self._addr, reg, 1)
-        return data[0]
+
+        if data is None:
+            return 0
+        else:
+            return data[0]
 
     def get_cmdid(self) -> int:
         """
         Returns the current command id
         :return: int
         """
-        sleep(DF2301Q_I2C_GET_CMDID_DURATION)
         return self._read_reg(DF2301Q_I2C_REG_CMDID)
 
     def get_wake_time(self) -> int:
