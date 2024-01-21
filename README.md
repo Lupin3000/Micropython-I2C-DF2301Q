@@ -29,7 +29,7 @@ $ cd Micropython-I2C-DF2301Q/
 You can optionally install other helpful Python packages.
 
 - esptool (_to flash the MicroPython firmware to the ESP32_)
-- rshell (_to establish a serial connection between the local computer and the ESP32 and to transfer data _)
+- rshell (_to establish a serial connection between the local computer and the ESP32 and to transfer data_)
 - micropython-esp32-stubs (_to facilitate local development, for example: code completion_)
 
 ```shell
