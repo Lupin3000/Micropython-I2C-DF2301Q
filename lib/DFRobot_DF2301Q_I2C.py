@@ -43,15 +43,22 @@ class DFRobot_DF2301Q_I2C:
         if isinstance(data, int):
             data = [data]
 
-        self._i2c.writeto_mem(self._addr, reg, bytearray(data))
+        try:
+            self._i2c.writeto_mem(self._addr, reg, bytearray(data))
+        except Exception as err:
+            print(f'Write issue: {err}')
 
     def _read_reg(self, reg):
         """
         Reads data from the I2C register
-        :param reg: address of device
+        :param reg: register address
         :return: bytes or 0
         """
-        data = self._i2c.readfrom_mem(self._addr, reg, 1)
+        try:
+            data = self._i2c.readfrom_mem(self._addr, reg, 1)
+        except Exception as err:
+            print(f'Read issue: {err}')
+            data = None
 
         if data is None:
             return 0
